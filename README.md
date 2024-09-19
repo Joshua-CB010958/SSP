@@ -1,2 +1,2 @@
 # SSP
-Designing a laravel, PHP and tailwind CSS
+Designing a E-commerce website using laravel, PHP and tailwind CSS
