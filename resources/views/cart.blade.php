@@ -16,7 +16,7 @@
     <!-- Header -->
     <header class="bg-gray-200 p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold">Shoppings Cart</h1>
+            <h1 class="text-xl font-bold">Shopping Cart</h1>
             <a href="{{ url('/home') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
                 Back to Store
             </a>
