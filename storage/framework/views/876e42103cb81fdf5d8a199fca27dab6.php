@@ -1,0 +1,2 @@
+<input type="checkbox" <?php echo $attributes->merge(['class' => 'rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500']); ?>>
+<?php /**PATH C:\Desktop folder\Uni coursework\Year 2\Sem 2\SSP II\PetCo\PetCo\resources\views\components\checkbox.blade.php ENDPATH**/ ?>
