@@ -16,3 +16,11 @@ class Product extends Model
         'pro_image_url'
     ];
 }
+
+class Role extends Model
+{
+    public function Product()
+    {
+        return $this->belongsToMany(Product::class);
+    }
+}
