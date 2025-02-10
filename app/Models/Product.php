@@ -21,6 +21,6 @@ class Role extends Model
 {
     public function Product()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(User::class);
     }
 }

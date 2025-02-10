@@ -33,3 +33,12 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
+Route::get('/image/{filename}', function ($filename) {
+    $path = public_path('storage/product_images/' . $filename);
+
+    if (!File::exists($path)) {
+        return response()->json(['error' => 'File not found'], 404);
+    }
+
+    return Response::file($path);
+});

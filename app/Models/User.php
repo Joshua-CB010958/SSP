@@ -74,3 +74,11 @@ class User extends Authenticatable
         return $this->user_type == 1;
     }
 }
+
+class Role extends User
+{
+    public function User()
+    {
+        return $this->belongsToMany(Product::class);
+    }
+}

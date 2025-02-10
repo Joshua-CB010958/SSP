@@ -128,17 +128,32 @@ class ProductController extends Controller
         }
     }
     
-public function customerCountries()
-{
-    // Fetch customers, excluding admin users (where user_type = 1)
-    $customerData = DB::table('users')
-        ->select('country', DB::raw('count(*) as count'))
-        ->where('user_type', 0) // Exclude admins (user_type = 1)
-        ->groupBy('country')
-        ->get();
+    public function customerCountries()
+    {
+        // Fetch customers, excluding admin users (where user_type = 1)
+        $customerData = DB::table('users')
+            ->select('country', DB::raw('count(*) as count'))
+            ->where('user_type', 0) // Exclude admins (user_type = 1)
+            ->groupBy('country')
+            ->get();
 
-    return response()->json($customerData);
-}
+        return response()->json($customerData);
+    }
 
+    public function getAppProducts()
+    {
+        try {
+            $products = Product::all();
+    
+            // Prepend the base URL to the image URLs without the extra "storage/" part
+            $products->each(function ($product) {
+                $product->pro_image_url = asset('storage/' . basename($product->pro_image_url));
+            });
+    
+            return response()->json($products);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
 
 }
